@@ -1,0 +1,26 @@
+{
+  "description": "Cofre de dados: bloqueia leitura direta de planilhas, confirma uso de valores reais e mascara saídas.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Read|Edit|MultiEdit|Write|NotebookEdit|Grep|Bash|PowerShell",
+        "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/guarda.mjs\"", "timeout": 15 }]
+      },
+      {
+        "matcher": "mcp__.*cofre__.*",
+        "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/confirmar.mjs\"", "timeout": 15 }]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Bash|PowerShell|mcp__.*",
+        "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/mascarar-saida.mjs\"", "timeout": 30 }]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [{ "type": "command", "command": "node \"${CLAUDE_PLUGIN_ROOT}/hooks/filtro-mensagem.mjs\"", "timeout": 15 }]
+      }
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "cofre-dados",
+  "version": "1.0.0",
+  "description": "Troca dados sensíveis (vendas, custos, clientes, CPF, e-mail...) por tokens antes do Claude ler. Mesmo valor, mesmo token: o Claude conta, cruza e compara sem ver o valor real, que fica num cofre cifrado na sua máquina.",
+  "author": { "name": "leandrofl" },
+  "keywords": ["mascaramento", "lgpd", "tokenizacao", "excel", "csv", "banco-de-dados"]
+}

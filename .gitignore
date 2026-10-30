@@ -1,0 +1,9 @@
+node_modules/
+.cofre-dados/
+*.mascarado.*
+*.xlsx
+*.xlsm
+*.xls
+*.csv
+*.tsv
+*.db

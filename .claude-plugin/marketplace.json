@@ -1,0 +1,12 @@
+{
+  "name": "cofre-local",
+  "owner": { "name": "leandrofl" },
+  "description": "Marketplace local com o plugin cofre-dados.",
+  "plugins": [
+    {
+      "name": "cofre-dados",
+      "source": "./",
+      "description": "Mascaramento de dados sensíveis com tokens determinísticos e cofre cifrado local."
+    }
+  ]
+}
